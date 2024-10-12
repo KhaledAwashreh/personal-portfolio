@@ -1,9 +1,19 @@
-.main-padding{
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+
+.main-padding {
   padding: 2em;
 }
 
-.section-title{
+.section-title {
   text-align: center;
+}
+
+
+.section-subtitle {
+  text-align: center;
+  font-weight: 100;
+  margin: 1.5em auto 1.5em auto;
 }
 
 .section-title::after {
@@ -11,36 +21,60 @@
   display: block;
   width: 4em;
   height: 3px;
-  background-color: blue;
-  margin: 1.5em auto 0 auto; 
+  background-color: #007bff;
+  margin: 1.5em auto 0 auto;
 }
 
-.resume-item-content::before{
-  content:""; 
-  background-color: blue;
-  position: absolute; 
-  display:column;
-  width: 0.3em;
-  min-height: 100px;
+.resume-item-content {
+  position: relative;
 }
 
-#experience .row{
+.resume-item-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2em;
+  width: 0.1em;
+  height: 100%;
+  background-color: #007bff;
+}
+
+.resume-item-title::before {
+  content: "";
+  position: absolute;
+  bottom: -0.09em;
+  left: -2.7em  ;
+  width: 23px;   /* Diameter of the circle */
+  height: 23px;  /* Diameter of the circle */
+  border: 0.1em solid #007bff; /* Blue border for the hollow circle */
+  border-radius: 50%; /* Makes the shape a circle */
+  background-color: transparent; /* Hollow circle */
+}
+
+.resume-item-title{
+  position: relative;
+}
+
+
+
+#experience .row {
   display: flex;
   flex-direction: row;
   justify-content: center
 }
 
-.resume-column{
-  margin:4em;
+.resume-column {
+  width: 50%;
+  padding-top: 2em;
 }
 
-.container{
+.container {
   margin-right: auto;
   margin-left: auto;
 }
 
 ul {
-  list-style-type: disc; /* Keep bullet points */
-  margin: 0;            /* Remove margin around the list */
-  padding-left: 5px;    /* Minimal left padding for bullets */
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 0.7em;
 }
