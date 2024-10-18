@@ -1,116 +1,155 @@
-:root {
-  
-  /* system colors */
+  /* global values for system colors */
 
-  --light-blue: #007bff;
+  :root {
 
-
-  /* font weights */
-
-  --thin-font:100;
-  --normal-font:400;
-  --bold-font:700;
-}
-
-.main-padding {
-  padding: 2em;
-}
-
-.section-title {
-  text-align: center;
-}
+    --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+    --default-color: #4e4e4e; /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #0a090f; /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #0078ff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+    }
 
 
-.section-subtitle {
-  text-align: center;
-  font-weight: var(--light-font);
-  margin: 1.5em auto 1.5em auto;
-}
+  /* global values for font family, weight, and size */
 
-.section-title::after {
-  content: "";
-  display: block;
-  width: 4em;
-  height: 3px;
-  background-color: var(--light-blue);
-  margin: 1.5em auto 0 auto;
-}
+  :root {
+
+    /* font families */
+
+    --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --heading-font: "Raleway", sans-serif;
+    --nav-font: "Poppins", sans-serif;
 
 
+    /* font weights */
+
+    --thin-font: 100;
+    --normal-font: 400;
+    --bold-font: 700;
+
+    /* font size */
+
+    --large-font: 1.1250em;
+  }
 
 
+  .main-padding {
+    padding: 2em;
+  }
+
+  .section-title {
+    text-align: center;
+  }
 
 
+  .section-subtitle {
+    text-align: center;
+    font-weight: var(--light-font);
+    margin: 1.5em auto 1.5em auto;
+  }
+
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 4em;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 1.5em auto 0 auto;
+  }
+
+  .resume-item-content,
+  .resume-item-date,
+  .resume-item-details {
+    position: relative;
+  }
+
+  .resume-item-title {
+    position: relative;
+    font-weight: var(--light-font);
+    font-family: var(--heading-font);
+    color: var(--default-color);
+  }
+
+  .resume-column {
+    width: 50%;
+    padding-top: 2em;
+    padding-left: 33px;
+  }
 
 
-.resume-item-content,
-.resume-item-date,
-.resume-item-details {
-  position: relative;
-}
+  .resume-item-content::before,
+  .resume-item-date::before,
+  .resume-item-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -26px;
+    width: 0.15em;
+    height: 100%;
+    background-color: var(--accent-color);
 
-.resume-item-title {
-  position: relative;
-  font-weight: var(--bold-li);
-}
-
-.resume-column {
-  width: 50%;
-  padding-top: 2em;
-}
+  }
 
 
-.resume-item-content::before,
-.resume-item-date::before,
-.resume-item-details::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -2em;
-  width: 0.1em;
-  height: 100%;
-  background-color: var(--light-blue);
-}
+  .resume-item-date {
+    font-weight: var(--bold-font);
+    text-indent: 0.2em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: medium;
+    font-weight: var(--bold-font);
+    font-family: var(--heading-font);
+    color: var(--heading-colorlt-color);
+  }
 
+  .resume-item-details {
+    font-weight: var(--light-font);
+    font-style: italic;
+    padding-bottom: 10px;
+  }
 
-.resume-item-date{
-  font-weight: var(--bold-font);
-}
+  .resume-item-title::before {
+    content: "";
+    font-size: 16px;
+    position: absolute;
+    bottom: -0.2px;
+    left: -33px;
+    width: 16px;
+    height: 16px;
+    border: 0.15em solid var(--accent-color);
+    border-radius: 50%;
 
-.resume-item-details {
-  font-weight: var(--light-font);
-}
+    background-color: transparent;
 
-.resume-item-title::before {
-  content: "";
-  position: absolute;
-  bottom: -0.09em;
-  left: -2.7em;
-  width: 23px;
-  /* Diameter of the circle */
-  height: 23px;
-  /* Diameter of the circle */
-  border: 0.1em solid var(--light-blue);
-  /* Blue border for the hollow circle */
-  border-radius: 50%;
-  /* Makes the shape a circle */
-  background-color: transparent;
-  /* Hollow circle */
-}
+    /* Hollow circle */
+  }
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-} 
+  ul {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 0.7em;
+  }
 
-ul {
-  list-style-type: disc;
-  margin: 0;
-  padding-left: 0.7em;
-}
+  li {
+    padding-bottom: 10px;
+    font-weight: var(--light-font);
+    font-family: var(--heading-font);
+    color: var(--default-color);
+  }
 
-#experience .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center
+  #experience .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+  }
+
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
 }
